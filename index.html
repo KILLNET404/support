@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Поддержка разработок KILLNET_404: USDT TRC20, GRAM в сети TON и Telegram-канал Dev Underground">
+<title>Поддержка разработок</title>
+<style>
+
+:root {
+  color-scheme: dark;
+  --panel:#111b2d; --panel2:#16233b; --line:#2d4263;
+  --text:#eef4ff; --muted:#b8c7df; --soft:#89a2c8;
+  --btn:#2f60c5; --btn-hover:#3d73dd;
+  font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#193258 0%,transparent 35%),linear-gradient(180deg,#07111d 0%,#09111f 100%);color:var(--text)}
+main{max-width:1160px;margin:0 auto;padding:42px 18px 56px}
+header{max-width:820px;margin:0 auto 28px;text-align:center}
+.page-title{margin:0 0 18px;font-size:clamp(25px,3.6vw,35px);line-height:1.1;font-weight:800}
+.glass-title{display:inline-flex;align-items:center;justify-content:center;padding:18px 34px;border-radius:999px;border:1px solid rgba(163,196,255,.26);background:linear-gradient(135deg,rgba(30,48,86,.45),rgba(71,84,145,.18));box-shadow:0 10px 30px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-shadow:0 1px 12px rgba(0,0,0,.2)}
+.glass-title::before{content:none}
+header p{margin:0 auto 12px;max-width:760px;color:var(--muted);line-height:1.6;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px;align-items:stretch}
+.card{min-width:0;display:flex;flex-direction:column;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 10px 26px rgba(0,0,0,.22)}
+.card-heading{min-height:76px;display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-bottom:14px}
+.title-row{min-height:30px;display:flex;align-items:center;gap:7px;flex-wrap:nowrap}
+.title-row h2{margin:0;font-size:24px;line-height:1.2;white-space:nowrap}
+.coinicon{width:29px;height:29px;border-radius:50%;flex:none;display:inline-flex;align-items:center;justify-content:center;line-height:1}
+.coinicon.usdt{background:#26a17b;color:white;font-size:20px;font-weight:900}
+.coinicon.tron{width:25px;height:25px;background:#e93f52}
+.coinicon.gram{background:#146fe0}
+.coinicon.telegram{background:#2aabee}
+.coinicon svg{display:block;width:20px;height:20px}
+.network-pill{font-size:12px;line-height:1.2;font-weight:700;padding:5px 10px;border:1px solid #315eaa;border-radius:999px;display:inline-flex;align-items:center;min-height:26px;color:#dfeaff;background:#0e224b;white-space:nowrap}
+.network-pill.tron{background:#3b0f13;border-color:#7c2e38;color:#ffdfe3}
+.network-pill.telegram{background:#0d2d43;border-color:#236582;color:#dbf4ff}
+.qrwrap{width:100%;aspect-ratio:1/1;position:relative;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;flex:none;margin-bottom:15px;background:#071328}
+.card.usdt .qrwrap,.card.telegram .qrwrap,.card.gram .qrwrap{background:#061023 url('qr_neon_frame.png') center/100% 100% no-repeat}
+.qrwrap a{display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:zoom-in;min-width:0;aspect-ratio:1/1}
+.card.usdt .qrwrap a,.card.gram .qrwrap a,.card.telegram .qrwrap a{width:82%;height:82%}
+.qrwrap img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;border-radius:13px}
+.qrwrap a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:10px}
+
+.actions{display:flex;gap:10px;align-items:stretch;margin-top:auto;padding-top:18px}
+button,.linkbtn{appearance:none;border:none;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;min-height:46px;border-radius:12px;background:var(--btn);color:#fff;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;cursor:pointer;text-align:center}
+button:hover,.linkbtn:hover{background:var(--btn-hover)}
+.card.usdt .actions button,.card.gram .actions button{width:100%}
+.card.telegram .actions>*{flex:1 1 0;min-width:0;white-space:normal;font-size:13px;line-height:1.25;padding:8px 7px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){main{padding:28px 14px 40px}.grid{grid-template-columns:1fr}.card{padding:18px}}
+@media(max-width:480px){.glass-title{display:inline-flex;align-items:center;justify-content:center;padding:18px 34px;border-radius:999px;border:1px solid rgba(163,196,255,.26);background:linear-gradient(135deg,rgba(30,48,86,.45),rgba(71,84,145,.18));box-shadow:0 10px 30px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-shadow:0 1px 12px rgba(0,0,0,.2)}.glass-title::before{content:none}}
+@media(max-width:360px){.card.telegram .actions>*{font-size:11px;padding:8px 5px}.glass-title{display:inline-flex;align-items:center;justify-content:center;padding:18px 34px;border-radius:999px;border:1px solid rgba(163,196,255,.26);background:linear-gradient(135deg,rgba(30,48,86,.45),rgba(71,84,145,.18));box-shadow:0 10px 30px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-shadow:0 1px 12px rgba(0,0,0,.2)}}
+
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1 class="page-title"><span class="glass-title">Поддержка разработок</span></h1>
+  <p>Я создаю пользовательские скрипты, расширения для браузера и другие полезные инструменты. Если какой-либо из моих проектов оказался тебе полезен, можешь добровольно поддержать дальнейшую разработку.</p>
+  <p>Новости и обновления проектов публикую в Telegram-канале Dev Underground. Там же можно обсуждать разработки, предлагать идеи и сообщать об ошибках.</p>
+</header>
+
+<section class="grid">
+  <article class="card usdt">
+    <div class="card-heading"><div class="title-row"><span class="coinicon usdt" aria-label="USDT">₮</span><h2>USDT</h2></div><span class="network-pill tron">Сеть TRON · TRC20</span></div>
+    <div class="qrwrap"><a href="official_qr_usdt_trc20.png" target="_blank" rel="noopener noreferrer" aria-label="Открыть QR-код в полном размере"><img src="official_qr_usdt_trc20.png" alt="Официальный QR-код USDT TRC20"></a></div>
+    <div class="actions">
+      <button type="button" data-copy="usdt">Скопировать адрес</button>
+    </div>
+  </article>
+
+  <article class="card gram">
+    <div class="card-heading"><div class="title-row"><span class="coinicon gram" title="GRAM" aria-label="GRAM"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 10 4.4-5h5.2l4.4 5-7 9z" fill="#80d6ff" stroke="white" stroke-width=".9"/><path d="m5 10 14 0M9.4 5 12 10l2.6-5M12 10l0 9M5 10l7 9 7-9" stroke="#0c76ed" stroke-width=".85" fill="none"/><path d="m9.4 5 2.6 5L5 10" fill="#d5f7ff" opacity=".8"/></svg></span><h2>GRAM</h2></div><span class="network-pill">Сеть TON</span></div>
+    <div class="qrwrap"><a href="official_qr_ton_gram.png" target="_blank" rel="noopener noreferrer" aria-label="Открыть QR-код в полном размере"><img src="official_qr_ton_gram.png" alt="Официальный QR-код GRAM в сети TON"></a></div>
+    <div class="actions">
+      <button type="button" data-copy="ton">Скопировать адрес</button>
+    </div>
+  </article>
+
+  <article class="card telegram">
+    <div class="card-heading"><div class="title-row"><span class="coinicon telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="white" d="M20.5 4.5 3.7 11.1c-1.2.46-1.2 1.17-.22 1.48l4.3 1.34 1.66 5.08c.2.55.1.77.7.77.45 0 .64-.2.88-.44l2.12-2.06 4.42 3.26c.82.44 1.41.22 1.61-.76l2.86-13.47c.28-1.2-.46-1.75-1.53-1.26Zm-11.8 9.1L18.8 7.2c.51-.31.98-.14.59.2l-8.3 7.5-.32 3.5-2.07-4.8Z"/></svg></span><h2>Telegram</h2></div><span class="network-pill telegram">Канал разработчика</span></div>
+    <div class="qrwrap"><a href="official_qr_telegram_contact.png" target="_blank" rel="noopener noreferrer" aria-label="Открыть QR-код в полном размере"><img src="official_qr_telegram_contact.png" alt="Официальный QR-код канала Dev Underground"></a></div>
+    <div class="actions">
+      <a class="linkbtn" href="https://t.me/DevUndergroundLab" target="_blank" rel="noopener noreferrer">Открыть канал</a>
+      <button type="button" data-copy="tglink">Скопировать ссылку</button>
+    </div>
+  </article>
+</section>
+
+</main>
+<script>
+const clipboardValues = {
+  usdt: 'TLFYxeKEMqqjb4UU2G4NxLob7YTDoQo86T',
+  ton: 'UQChWeQtbwZuMmsQPsT1gULdkkDdqUmTrmE6jQQliCRWVYy4',
+  tglink: 'https://t.me/DevUndergroundLab'
+};
+for (const button of document.querySelectorAll('button[data-copy]')) {
+  const defaultText = button.textContent;
+  button.addEventListener('click', async () => {
+    const key = button.dataset.copy;
+    const value = clipboardValues[key] || '';
+    try {
+      await navigator.clipboard.writeText(value.trim());
+      button.textContent = 'Скопировано';
+    } catch (e) {
+      button.textContent = 'Не удалось скопировать';
+    }
+    setTimeout(() => button.textContent = defaultText, 2200);
+  });
+}
+</script>
+</body>
+</html>
